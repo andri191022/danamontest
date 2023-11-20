@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\testing\\Testing.DanamonNew\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
+    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
   },
   "projects": {
-    "E:\\Project\\testing\\Testing.DanamonNew\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
+    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\testing\\Testing.DanamonNew\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "projectName": "Testing.DanamonNew",
-        "projectPath": "E:\\Project\\testing\\Testing.DanamonNew\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\testing\\Testing.DanamonNew\\Testing.DanamonNew\\obj\\",
+        "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,19 +42,23 @@
           "dependencies": {
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.19.4, )"
+              "version": "[1.19.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.11, )"
-            },
-            "NEST": {
-              "target": "Package",
-              "version": "[7.17.5, )"
+              "version": "[8.0.0, )"
             },
             "RestSharp": {
               "target": "Package",
               "version": "[110.2.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "System.Text.RegularExpressions": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [

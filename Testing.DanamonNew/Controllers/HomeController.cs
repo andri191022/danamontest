@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
-using Nest;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Diagnostics;
