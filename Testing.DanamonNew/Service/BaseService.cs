@@ -36,7 +36,9 @@ namespace Testing.DanamonNew.Service
                 var request = new RestRequest(requestDto.Url, RestSharp.Method.Post);
 
                 //requestDto.Data = null;
-                var token = "YjQyMzg2ZTItNGE4ZS00Y2Y2LTkyNjYtNTMzYzk1YWFlMDAyOmU3MGE1NGYyLWEwOGUtNGU1Ni1iZDg3LWIwMzI4ZTEzNTMwMQ==";
+                var encdo = System.Text.Encoding.UTF8.GetBytes(Utility.SD.OACClientID + ":" + Utility.SD.OACClientIDSecret);
+
+                string token = System.Convert.ToBase64String(encdo); //"YjQyMzg2ZTItNGE4ZS00Y2Y2LTkyNjYtNTMzYzk1YWFlMDAyOmU3MGE1NGYyLWEwOGUtNGU1Ni1iZDg3LWIwMzI4ZTEzNTMwMQ==";
                 request.AddHeader("Authorization", $"Basic {token}");
 
                 RestResponse response = await client.ExecuteAsync(request);
@@ -49,7 +51,7 @@ namespace Testing.DanamonNew.Service
 
                     responseDto.Message = "";
                     responseDto.IsSuccess = true;
-                    responseDto.Result =  new
+                    responseDto.Result = new
                     {
                         Token = response.Cookies[0].Value,
                         nameBearer = response.Cookies[0].Name,

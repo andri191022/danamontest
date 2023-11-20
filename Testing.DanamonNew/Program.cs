@@ -19,6 +19,13 @@ builder.Services.AddHttpClient<IAuthService, AuthService>();
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 SD.RegisterVaAPIBase = builder.Configuration["ServiceUrls:RegisterVaAPI"];
 
+//bdi
+SD.OACClientID = builder.Configuration["DanamonAuthData:OACClientID"];
+SD.OACClientIDSecret = builder.Configuration["DanamonAuthData:OACClientIDSecret"];
+SD.BDIKey = builder.Configuration["DanamonAuthData:BDIKey"];
+SD.BDIKeySecret = builder.Configuration["DanamonAuthData:BDIKeySecret"];
+//bdi
+
 
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IBaseService, BaseService>();
