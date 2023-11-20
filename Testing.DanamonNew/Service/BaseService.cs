@@ -51,7 +51,7 @@ namespace Testing.DanamonNew.Service
                     responseDto.IsSuccess = true;
                     responseDto.Result =  new
                     {
-                        keyBearer = response.Cookies[0].Value,
+                        Token = response.Cookies[0].Value,
                         nameBearer = response.Cookies[0].Name,
                         timeBearer = response.Cookies[0].TimeStamp,
                         expiresBearer = response.Cookies[0].Expires

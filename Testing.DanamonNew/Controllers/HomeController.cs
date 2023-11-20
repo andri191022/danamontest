@@ -1,11 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
 using Newtonsoft.Json;
 using RestSharp;
 using System.Diagnostics;
+using System.Security.Claims;
 using Testing.DanamonNew.Models;
 using Testing.DanamonNew.Service.IService;
 using static System.Net.Mime.MediaTypeNames;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Testing.DanamonNew.Controllers
 {
@@ -24,7 +28,9 @@ namespace Testing.DanamonNew.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            string myLabelText = _tokenProvider.GetToken();
+
+            return View((object)myLabelText);
         }
 
 
@@ -46,10 +52,50 @@ namespace Testing.DanamonNew.Controllers
 
             ResponseDto? responseDto = await _authService.LoginAuthAsync(obj);
 
-            return View(obj);
+            if (responseDto != null && responseDto.IsSuccess)
+            {
+                var jsonString = JsonConvert.SerializeObject(responseDto.Result);
+
+                AuthResponseDto authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
+
+              //  await SignInUser(authResponseDto);
+                _tokenProvider.SetToken(authResponseDto.Token);
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                TempData["error"] = responseDto.Message;
+                return View(obj);
+            }
+
+
         }
 
+        private async Task SignInUser(AuthResponseDto model)
+        {
+            var handler = new JwtSecurityTokenHandler();
 
+            var jwt = handler.ReadJwtToken(model.Token);
+
+            var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+            //identity.AddClaim(new Claim(JwtRegisteredClaimNames.Email,
+            //    jwt.Claims.FirstOrDefault(u => u.Type == JwtRegisteredClaimNames.Email).Value));
+            //identity.AddClaim(new Claim(JwtRegisteredClaimNames.Sub,
+            //    jwt.Claims.FirstOrDefault(u => u.Type == JwtRegisteredClaimNames.Sub).Value));
+            identity.AddClaim(new Claim(JwtRegisteredClaimNames.Name,
+                jwt.Claims.FirstOrDefault(u => u.Type == JwtRegisteredClaimNames.Name).Value));
+
+
+            //identity.AddClaim(new Claim(ClaimTypes.Name,
+            //    jwt.Claims.FirstOrDefault(u => u.Type == JwtRegisteredClaimNames.Email).Value));
+            //identity.AddClaim(new Claim(ClaimTypes.Role,
+            //    jwt.Claims.FirstOrDefault(u => u.Type == "role").Value));
+
+
+
+            var principal = new ClaimsPrincipal(identity);
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
