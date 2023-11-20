@@ -1,0 +1,26 @@
+﻿@model DanamonAuthDto
+
+<form method="post">
+    <div class="container border p-4">
+        <div class="row text-center">
+            <h1>Login</h1>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 pb-2">
+                <input asp-for="Authorization" readonly class="form-control" placeholder="Username..." value="YjQyMzg2ZTItNGE4ZS00Y2Y2LTkyNjYtNTMzYzk1YWFlMDAyOmU3MGE1NGYyLWEwOGUtNGU1Ni1iZDg3LWIwMzI4ZTEzNTMwMQ==" />
+                <span asp-validation-for="Authorization" class="text-danger" />
+            </div>
+            <div class="col-12 col-md-6 offset-md-3 pb-2">
+                <input asp-for="grant_type" readonly class="form-control" placeholder="grant_type..." value="client_credentials" />
+                <span asp-validation-for="grant_type" class="text-danger" />
+            </div>
+            <div class="col-12 col-md-6 offset-md-3 pb-2">
+                <button type="submit" class="form-control btn btn-success" value="Submit">Login</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
