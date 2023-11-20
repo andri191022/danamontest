@@ -456,3 +456,7 @@ E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsof
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll

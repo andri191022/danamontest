@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Tutorial/DanamonTest/danamontest/Testing.DanamonNew/Views/Home/CreateVA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVWQS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Tutorial/DanamonTest/danamontest/Testing.DanamonNew/Views/Home/GetAuthorize.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRBdXRob3JpemUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

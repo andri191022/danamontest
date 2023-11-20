@@ -6,6 +6,6 @@ namespace Testing.DanamonNew.Service.IService
     {
         Task<ResponseDto?> LoginAsync(LoginRequestDto loginRequestDto);
 
-        Task<ResponseDto?> LoginAuthAsync(DanamonAuthDto loginRequestDto);
+        
     }
 }

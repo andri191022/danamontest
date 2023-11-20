@@ -8,6 +8,10 @@ using System.Runtime.Intrinsics.Arm;
 using System.Security.Policy;
 using RestSharp;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using NuGet.Common;
+using Elfie.Serialization;
+using Newtonsoft.Json.Linq;
+using System;
 
 
 namespace Testing.DanamonNew.Service
@@ -76,7 +80,7 @@ namespace Testing.DanamonNew.Service
 
         }
 
-        public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true, bool oAuth = true)
+        public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true)
         {
             try
             {
@@ -96,6 +100,16 @@ namespace Testing.DanamonNew.Service
                     var token = _tokenProvider.GetToken();
                     message.Headers.Add("Authorization", $"Bearer {token}");
                 }
+                //header
+                if (requestDto.Header != null)
+                {
+                    string hdr = JsonConvert.SerializeObject(requestDto.Header);
+                    HeaderDto headerDto = JsonConvert.DeserializeObject<HeaderDto>(hdr);
+                    if (!string.IsNullOrEmpty(headerDto.BDI_Key)) message.Headers.Add("BDI-Key", headerDto.BDI_Key);
+                    if (!string.IsNullOrEmpty(headerDto.BDI_Timestamp)) message.Headers.Add("BDI-Timestamp", headerDto.BDI_Timestamp);
+                    if (!string.IsNullOrEmpty(headerDto.BDI_Signature)) message.Headers.Add("BDI-Signature", headerDto.BDI_Signature);
+                }
+                //
 
                 message.RequestUri = new Uri(requestDto.Url);
 
@@ -161,7 +175,17 @@ namespace Testing.DanamonNew.Service
                         return new() { IsSuccess = false, Message = "Internal Server Error" };
                     default:
                         var apiContent = await apiResponse.Content.ReadAsStringAsync();
-                        var apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
+                        ResponseDto apiResponseDto = new ResponseDto();
+                        if (apiContent.Contains("Request Rejected"))
+                        {
+                            apiResponseDto.IsSuccess = true;
+                            apiResponseDto.Message = apiContent;
+                        }
+                        else
+                        {
+                            apiResponseDto = JsonConvert.DeserializeObject<ResponseDto>(apiContent);
+                        }
+
                         return apiResponseDto;
                 }
             }
@@ -175,6 +199,7 @@ namespace Testing.DanamonNew.Service
                 return dto;
             }
         }
+
     }
 
 

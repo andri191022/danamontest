@@ -17,20 +17,12 @@ namespace Testing.DanamonNew.Service
             {
                 ApiType = SD.ApiType.POST,
                 Data = loginRequestDto,
-                Url = SD.AuthAPIBase + "?grant_type=client_credentials"
-            }, withBearer: false, oAuth: false);
+                Url = SD.AuthAPIBase + "/login"
+            }, withBearer: false);
         }
 
   
-        public async Task<ResponseDto?> LoginAuthAsync(DanamonAuthDto loginRequestDto)
-        {
-            return await _baseService.postAsync(new RequestDto()
-            {
-                ApiType = SD.ApiType.POST,
-                Data = loginRequestDto,
-                Url = SD.AuthAPIBase + "?grant_type=client_credentials"
-            });
-        }
+       
 
        
     }

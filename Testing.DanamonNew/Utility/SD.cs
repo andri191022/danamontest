@@ -18,7 +18,8 @@ namespace Testing.DanamonNew.Utility
 
 
         public const string RoleAdmin = "ADMIN";
-        public const string TokenCookie = "JWTToken";
+        public const string TokenCookie = "TS01f29741";
+        public const string AuthCookie = "JWTToken";
         public enum ApiType
         {
             GET,

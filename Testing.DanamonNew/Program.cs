@@ -15,6 +15,7 @@ builder.Services.AddHttpClient();
 //sutom again
 
 builder.Services.AddHttpClient<IAuthService, AuthService>();
+builder.Services.AddHttpClient<IDanamonService, DanamonService>();
 
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
 SD.RegisterVaAPIBase = builder.Configuration["ServiceUrls:RegisterVaAPI"];
@@ -30,6 +31,7 @@ SD.BDIKeySecret = builder.Configuration["DanamonAuthData:BDIKeySecret"];
 builder.Services.AddScoped<ITokenProvider, TokenProvider>();
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IDanamonService, DanamonService>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

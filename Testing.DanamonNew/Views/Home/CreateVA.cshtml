@@ -1,0 +1,63 @@
+﻿@model Testing.DanamonNew.Models.RegistrationVARequest
+
+@{
+    ViewData["Title"] = "CreateVA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>CreateVA</h1>
+
+<h4>RegistrationVARequestDto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateVA">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserReferenceNumber" class="control-label"></label>
+                <input asp-for="UserReferenceNumber" class="form-control" readonly />
+                <span asp-validation-for="UserReferenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestTime" class="control-label"></label>
+                <input asp-for="RequestTime" class="form-control" readonly  />
+                <span asp-validation-for="RequestTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VirtualAccountNumber" class="control-label"></label>
+                <input asp-for="VirtualAccountNumber" class="form-control" readonly />
+                <span asp-validation-for="VirtualAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VirtualAccountName" class="control-label"></label>
+                <input asp-for="VirtualAccountName" class="form-control" readonly />
+                <span asp-validation-for="VirtualAccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VirtualAccountExpiryDate" class="control-label"></label>
+                <input asp-for="VirtualAccountExpiryDate" class="form-control" readonly />
+                <span asp-validation-for="VirtualAccountExpiryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <p>Result Success</p>
+    <p>@TempData["success"]</p>
+
+    <br />
+    <p>Result Error</p>
+    <p>@TempData["error"]</p>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

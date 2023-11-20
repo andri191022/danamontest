@@ -10,6 +10,7 @@ using Testing.DanamonNew.Models;
 using Testing.DanamonNew.Service.IService;
 using static System.Net.Mime.MediaTypeNames;
 using System.IdentityModel.Tokens.Jwt;
+using System.Numerics;
 
 namespace Testing.DanamonNew.Controllers
 {
@@ -18,12 +19,14 @@ namespace Testing.DanamonNew.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IAuthService _authService;
         private readonly ITokenProvider _tokenProvider;
+        private readonly IDanamonService _danamonService;
 
-        public HomeController(ILogger<HomeController> logger, IAuthService authService, ITokenProvider tokenProvider)
+        public HomeController(ILogger<HomeController> logger, IAuthService authService, ITokenProvider tokenProvider, IDanamonService danamonService)
         {
             _logger = logger;
             _authService = authService;
             _tokenProvider = tokenProvider;
+            _danamonService = danamonService;
         }
 
         public IActionResult Index()
@@ -50,7 +53,7 @@ namespace Testing.DanamonNew.Controllers
         public async Task<IActionResult> GetAuthorize(DanamonAuthDto obj)
         {
 
-            ResponseDto? responseDto = await _authService.LoginAuthAsync(obj);
+            ResponseDto? responseDto = await _danamonService.LoginAuthAsync(obj);
 
             if (responseDto != null && responseDto.IsSuccess)
             {
@@ -58,7 +61,7 @@ namespace Testing.DanamonNew.Controllers
 
                 AuthResponseDto authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
 
-              //  await SignInUser(authResponseDto);
+                //  await SignInUser(authResponseDto);
                 _tokenProvider.SetToken(authResponseDto.Token);
                 return RedirectToAction("Index", "Home");
             }
@@ -96,6 +99,62 @@ namespace Testing.DanamonNew.Controllers
             var principal = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
         }
+
+
+        [HttpGet]
+        public IActionResult CreateVA()
+        {
+            Guid guid = Guid.NewGuid();
+            Random random = new Random();
+            int i = random.Next();
+
+            RegistrationVARequest obj = new RegistrationVARequest();
+            obj.UserReferenceNumber = (i.ToString() + i.ToString()).Substring(0, 16); //"1200123456784888";
+            obj.VirtualAccountNumber = "8888000000654321";
+            obj.VirtualAccountName = "MEDIO MAYO";
+            obj.VirtualAccountExpiryDate = DateTime.Now.AddDays(5).ToString("yyyyMMddhhmmss");
+            obj.RequestTime = DateTime.Now.ToString("yyyyMMddhhmmss");
+
+
+            return View(obj);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateVA(RegistrationVARequest obj)
+        {
+
+            if (!string.IsNullOrEmpty(_tokenProvider.GetToken()))
+            {
+                RegistrationVARequestDto objDto = new RegistrationVARequestDto();
+
+                objDto.registrationVARequest = obj;
+
+                objDto.BDISignature = "f4e4d374c813fd1689bdb1bf1f51653f";
+                objDto.BDIKey = Utility.SD.BDIKey;
+                objDto.BDITimestamp = DateTime.Now.ToUniversalTime().ToString("o");
+                
+
+                ResponseDto? response = await _danamonService.RegistrationVAAsync(objDto);
+
+                if (response != null && response.IsSuccess)
+                {
+                    TempData["success"] = response?.Message;
+                }
+                else
+                {
+                    TempData["error"] = response?.Message;
+                }
+            }
+            else
+            {
+                TempData["error"] = "Token belum ada, Get Token dahulu";
+            }
+
+
+            return View(obj);
+        }
+
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

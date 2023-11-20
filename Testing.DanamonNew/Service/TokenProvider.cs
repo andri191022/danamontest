@@ -30,5 +30,10 @@ namespace Testing.DanamonNew.Service
         {
             _contextAccessor.HttpContext?.Response.Cookies.Append(SD.TokenCookie, token);
         }
+
+        public void SetAuthToken(string token)
+        {
+            _contextAccessor.HttpContext?.Response.Cookies.Append(SD.AuthCookie, token);
+        }
     }
 }
