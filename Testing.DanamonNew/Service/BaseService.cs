@@ -35,6 +35,7 @@ namespace Testing.DanamonNew.Service
                 var options = new RestClientOptions()
                 {
                     MaxTimeout = -1,
+                    RemoteCertificateValidationCallback = (sender, certification, chain, sslPolicyError) => true,
                 };
                 var client = new RestClient(options);
                 var request = new RestRequest(requestDto.Url, RestSharp.Method.Post);
@@ -44,27 +45,30 @@ namespace Testing.DanamonNew.Service
 
                 string token = System.Convert.ToBase64String(encdo); //"YjQyMzg2ZTItNGE4ZS00Y2Y2LTkyNjYtNTMzYzk1YWFlMDAyOmU3MGE1NGYyLWEwOGUtNGU1Ni1iZDg3LWIwMzI4ZTEzNTMwMQ==";
                 request.AddHeader("Authorization", $"Basic {token}");
+                request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+                request.AddParameter("grant_type", "client_credentials");
 
                 RestResponse response = await client.ExecuteAsync(request);
 
-
-                if (response.Cookies != null)
+                switch (response.StatusCode)
                 {
-                    //string keyBearer = response.Cookies[0].Value;
-                    //string nameBearer = response.Cookies[0].Name;
+                    case HttpStatusCode.NotFound:
+                        return new() { IsSuccess = false, Message = "Not Found" };
+                    case HttpStatusCode.Forbidden:
+                        return new() { IsSuccess = false, Message = "Access Denied" };
+                    case HttpStatusCode.Unauthorized:
+                        return new() { IsSuccess = false, Message = "Unauthorized" };
+                    case HttpStatusCode.InternalServerError:
+                        return new() { IsSuccess = false, Message = "Internal Server Error" };
+                    default:
+                        AuthResponseDto apiContent = JsonConvert.DeserializeObject<AuthResponseDto>(response.Content);  //  JsonConvert.SerializeObject(response.Content);
+                        ResponseDto apiResponseDto = new ResponseDto();
+                        apiResponseDto.IsSuccess = true;
+                        apiResponseDto.Message = "";
+                        apiResponseDto.Result = apiContent;
 
-                    responseDto.Message = "";
-                    responseDto.IsSuccess = true;
-                    responseDto.Result = new
-                    {
-                        Token = response.Cookies[0].Value,
-                        nameBearer = response.Cookies[0].Name,
-                        timeBearer = response.Cookies[0].TimeStamp,
-                        expiresBearer = response.Cookies[0].Expires
-                    };
+                        return apiResponseDto;
                 }
-
-                return responseDto;
 
             }
             catch (Exception ex)

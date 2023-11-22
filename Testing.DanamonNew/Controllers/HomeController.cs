@@ -62,7 +62,7 @@ namespace Testing.DanamonNew.Controllers
                 AuthResponseDto authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
 
                 //  await SignInUser(authResponseDto);
-                _tokenProvider.SetToken(authResponseDto.Token);
+                _tokenProvider.SetToken(authResponseDto.access_token);
                 return RedirectToAction("Index", "Home");
             }
             else
@@ -78,7 +78,7 @@ namespace Testing.DanamonNew.Controllers
         {
             var handler = new JwtSecurityTokenHandler();
 
-            var jwt = handler.ReadJwtToken(model.Token);
+            var jwt = handler.ReadJwtToken(model.access_token);
 
             var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
             //identity.AddClaim(new Claim(JwtRegisteredClaimNames.Email,

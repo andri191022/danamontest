@@ -38,7 +38,7 @@ namespace Testing.DanamonNew.Service
             {
                 ApiType = SD.ApiType.POST,
                 Data = loginRequestDto,
-                Url = SD.AuthAPIBase + "?grant_type=client_credentials"
+                Url = SD.AuthAPIBase  //+ "?grant_type=client_credentials"
             });
         }
     }
