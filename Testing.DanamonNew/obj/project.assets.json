@@ -9713,11 +9713,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+      "projectUniqueName": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
       "projectName": "Testing.DanamonNew",
-      "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+      "projectPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\obj\\",
+      "outputPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
