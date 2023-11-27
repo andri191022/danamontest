@@ -1,4 +1,4 @@
-﻿using Testing.DanamonNew.Models;
+﻿using Testing.DanamonNew.Models.Dto;
 using Testing.DanamonNew.Service.IService;
 using Testing.DanamonNew.Utility;
 

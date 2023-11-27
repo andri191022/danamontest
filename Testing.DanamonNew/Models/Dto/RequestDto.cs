@@ -1,7 +1,7 @@
 ﻿using static Testing.DanamonNew.Utility.SD;
 using Testing.DanamonNew.Utility;
 
-namespace Testing.DanamonNew.Models
+namespace Testing.DanamonNew.Models.Dto
 {
     public class RequestDto
     {

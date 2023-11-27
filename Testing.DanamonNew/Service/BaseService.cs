@@ -1,7 +1,6 @@
 ﻿using static Testing.DanamonNew.Utility.SD;
 using System.Net;
 using System.Text;
-using Testing.DanamonNew.Models;
 using Testing.DanamonNew.Service.IService;
 using Newtonsoft.Json;
 using System.Runtime.Intrinsics.Arm;
@@ -12,6 +11,7 @@ using NuGet.Common;
 using Elfie.Serialization;
 using Newtonsoft.Json.Linq;
 using System;
+using Testing.DanamonNew.Models.Dto;
 
 
 namespace Testing.DanamonNew.Service
@@ -36,6 +36,7 @@ namespace Testing.DanamonNew.Service
                 {
                     MaxTimeout = -1,
                     RemoteCertificateValidationCallback = (sender, certification, chain, sslPolicyError) => true,
+                    //  Proxy= new System.Net.WebProxy("http://idnproxy",8080),  //----> jika menggunakan proxy
                 };
                 var client = new RestClient(options);
                 var request = new RestRequest(requestDto.Url, RestSharp.Method.Post);
@@ -43,7 +44,7 @@ namespace Testing.DanamonNew.Service
                 //requestDto.Data = null;
                 var encdo = System.Text.Encoding.UTF8.GetBytes(Utility.SD.OACClientID + ":" + Utility.SD.OACClientIDSecret);
 
-                string token = System.Convert.ToBase64String(encdo); //"YjQyMzg2ZTItNGE4ZS00Y2Y2LTkyNjYtNTMzYzk1YWFlMDAyOmU3MGE1NGYyLWEwOGUtNGU1Ni1iZDg3LWIwMzI4ZTEzNTMwMQ==";
+                string token = System.Convert.ToBase64String(encdo); 
                 request.AddHeader("Authorization", $"Basic {token}");
                 request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
                 request.AddParameter("grant_type", "client_credentials");
@@ -89,6 +90,14 @@ namespace Testing.DanamonNew.Service
             try
             {
                 HttpClient client = _httpClientFactory.CreateClient("MangoAPI");
+
+                HttpClientHandler httpHandler = new HttpClientHandler
+                {
+                    Proxy= new System.Net.WebProxy("http://idnproxy", 8080),
+                };    
+
+               // client = new HttpClient(httpHandler); //----> jika menggunakan proxy
+
                 HttpRequestMessage message = new();
                 if (requestDto.ContentType == Utility.SD.ContentType.MultipartFormData)
                 {

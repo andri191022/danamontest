@@ -1,6 +1,6 @@
 ﻿using static System.Formats.Asn1.AsnWriter;
 
-namespace Testing.DanamonNew.Models
+namespace Testing.DanamonNew.Models.Dto
 {
     public class AuthResponseDto
     {

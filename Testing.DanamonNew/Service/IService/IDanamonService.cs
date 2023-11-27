@@ -1,4 +1,4 @@
-﻿using Testing.DanamonNew.Models;
+﻿using Testing.DanamonNew.Models.Dto;
 
 namespace Testing.DanamonNew.Service.IService
 {
@@ -7,5 +7,7 @@ namespace Testing.DanamonNew.Service.IService
         Task<ResponseDto?> LoginAuthAsync(DanamonAuthDto loginRequestDto);
 
         Task<ResponseDto?> RegistrationVAAsync(RegistrationVARequestDto registrationVaRequestDto);
+
+        Task<ResponseDto?>AccountInquiryBalanceAsync(AccountInquiryBalanceRequestDto accountInquiryBalanceRequestDto);
     }
 }

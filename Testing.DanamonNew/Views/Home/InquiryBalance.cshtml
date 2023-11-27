@@ -1,0 +1,42 @@
+﻿@model Testing.DanamonNew.Models.AccountInquiryBalanceRequest
+
+@{
+    ViewData["Title"] = "InquiryBalance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>InquiryBalance</h1>
+
+<h4>AccountInquiryBalanceRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="InquiryBalance">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserReferenceNumber" class="control-label"></label>
+                <input asp-for="UserReferenceNumber" class="form-control" />
+                <span asp-validation-for="UserReferenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RequestTime" class="control-label"></label>
+                <input asp-for="RequestTime" class="form-control" />
+                <span asp-validation-for="RequestTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountNumber" class="control-label"></label>
+                <input asp-for="AccountNumber" class="form-control" />
+                <span asp-validation-for="AccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Process" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

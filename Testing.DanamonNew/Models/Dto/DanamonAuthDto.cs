@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Testing.DanamonNew.Models
+namespace Testing.DanamonNew.Models.Dto
 {
     public class DanamonAuthDto
     {
@@ -8,6 +8,6 @@ namespace Testing.DanamonNew.Models
         public string Authorization { get; set; }
         [Required]
         public string grant_type { get; set; }
-        
+
     }
 }

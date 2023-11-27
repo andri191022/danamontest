@@ -1,4 +1,4 @@
-﻿namespace Testing.DanamonNew.Models
+﻿namespace Testing.DanamonNew.Models.Dto
 {
     public class RegistrationVAResponseDto
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Testing.DanamonNew.Models
+namespace Testing.DanamonNew.Models.Dto
 {
     public class LoginRequestDto
     {

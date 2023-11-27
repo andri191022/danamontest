@@ -1,5 +1,5 @@
 ﻿using NuGet.Packaging.Signing;
-using Testing.DanamonNew.Models;
+using Testing.DanamonNew.Models.Dto;
 using Testing.DanamonNew.Service.IService;
 using Testing.DanamonNew.Utility;
 
@@ -28,7 +28,7 @@ namespace Testing.DanamonNew.Service
 
                 },
                 Url = SD.RegisterVaAPIBase,
-                ContentType =SD.ContentType.MultipartFormData
+                ContentType =SD.ContentType.Json
             });
         }
 
@@ -39,6 +39,18 @@ namespace Testing.DanamonNew.Service
                 ApiType = SD.ApiType.POST,
                 Data = loginRequestDto,
                 Url = SD.AuthAPIBase  //+ "?grant_type=client_credentials"
+            });
+        }
+
+        public async Task<ResponseDto?> AccountInquiryBalanceAsync(AccountInquiryBalanceRequestDto accountInquiryBalanceRequestDto)
+        {
+            return await _baseService.SendAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = accountInquiryBalanceRequestDto.AccountInquiryBalanceRequest,
+                Header = accountInquiryBalanceRequestDto.Header,
+                Url = SD.RegisterVaAPIBase,
+                ContentType = SD.ContentType.Json
             });
         }
     }
