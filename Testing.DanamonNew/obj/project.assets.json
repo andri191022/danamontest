@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "DerConverter/3.0.0.82": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DerConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DerConverter.dll": {}
+        }
+      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -1936,6 +1945,18 @@
           }
         }
       },
+      "PemUtils/3.0.0.82": {
+        "type": "package",
+        "dependencies": {
+          "DerConverter": "3.0.0.82"
+        },
+        "compile": {
+          "lib/netstandard2.0/PemUtils.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PemUtils.dll": {}
+        }
+      },
       "RestSharp/110.2.0": {
         "type": "package",
         "dependencies": {
@@ -3230,6 +3251,20 @@
     }
   },
   "libraries": {
+    "DerConverter/3.0.0.82": {
+      "sha512": "6x9+tHjO7IqGtgLlPAc6P1gKGmSl4s5c35M2g6DoOWHWY5RRYRX5LioXD8347Uf4VIuNGoYvRowKiJFHhkkFRA==",
+      "type": "package",
+      "path": "derconverter/3.0.0.82",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "derconverter.3.0.0.82.nupkg.sha512",
+        "derconverter.nuspec",
+        "lib/net451/DerConverter.dll",
+        "lib/net471/DerConverter.dll",
+        "lib/netstandard2.0/DerConverter.dll"
+      ]
+    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -6728,6 +6763,20 @@
         "nuget.versioning.nuspec"
       ]
     },
+    "PemUtils/3.0.0.82": {
+      "sha512": "LtsJ8LPfBN65+/ONfkJg8ZqcAxm59xRy4o5ocn2m4mAYo0EmmVslZ4SwcAViwfYDPL08Hu/vBbO2qamhtadeyQ==",
+      "type": "package",
+      "path": "pemutils/3.0.0.82",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/PemUtils.dll",
+        "lib/net471/PemUtils.dll",
+        "lib/netstandard2.0/PemUtils.dll",
+        "pemutils.3.0.0.82.nupkg.sha512",
+        "pemutils.nuspec"
+      ]
+    },
     "RestSharp/110.2.0": {
       "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
       "type": "package",
@@ -9701,6 +9750,7 @@
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.0",
+      "PemUtils >= 3.0.0.82",
       "RestSharp >= 110.2.0",
       "System.IdentityModel.Tokens.Jwt >= 7.0.3",
       "System.Net.Http >= 4.3.4",
@@ -9757,6 +9807,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.0, )"
+          },
+          "PemUtils": {
+            "target": "Package",
+            "version": "[3.0.0.82, )"
           },
           "RestSharp": {
             "target": "Package",

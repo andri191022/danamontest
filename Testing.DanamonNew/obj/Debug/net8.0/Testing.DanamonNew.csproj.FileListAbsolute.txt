@@ -460,3 +460,15 @@ E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsof
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.csproj.AssemblyReference.cache
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.GeneratedMSBuildEditorConfig.editorconfig
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.AssemblyInfoInputs.cache
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.AssemblyInfo.cs
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.csproj.CoreCompileInputs.cache
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.MvcApplicationPartsAssemblyInfo.cache
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.RazorAssemblyInfo.cache
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.RazorAssemblyInfo.cs
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.sourcelink.json
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.dll
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\refint\Testing.DanamonNew.dll
+D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.pdb

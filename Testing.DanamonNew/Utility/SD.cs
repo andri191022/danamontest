@@ -1,9 +1,11 @@
 ﻿using Microsoft.Build.ObjectModelRemoting;
+using System.Security.Cryptography;
 
 namespace Testing.DanamonNew.Utility
 {
     public class SD
     {
+        public static RSAParameters RSAKey { get;set; }
         public static string RegisterVaAPIBase { get; set; }
         public static string AuthAPIBase { get; set; }
 
@@ -32,6 +34,15 @@ namespace Testing.DanamonNew.Utility
         {
             Json,
             MultipartFormData,
+        }
+
+        public enum FunctionDBIType
+        {
+            SC_73, //authentication token
+            SC_B1, //Inquiry Multifinance API
+            SC_B2,  //Payment Multifinance API
+            SC_24, //Virtual Accunt Inquiry as Client(SNAP BI) API
+            SC_25 //Virtual Account Payment as Client(SNAP BI) API
         }
     }
 }
