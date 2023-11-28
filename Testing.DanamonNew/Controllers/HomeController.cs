@@ -13,6 +13,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Numerics;
 using Testing.DanamonNew.Models.Dto;
 using System.Security.Principal;
+using Testing.DanamonNew.Logic;
+using Testing.DanamonNew.Utility;
 
 namespace Testing.DanamonNew.Controllers
 {
@@ -34,6 +36,9 @@ namespace Testing.DanamonNew.Controllers
         public IActionResult Index()
         {
             string myLabelText = _tokenProvider.GetToken();
+
+
+            string cc = GeneralLogic.GenerateSigniture(SD.ApiType.POST, SD.FunctionDBIType.SC_73, "");
 
             return View((object)myLabelText);
         }

@@ -6,6 +6,8 @@ using static Testing.DanamonNew.Utility.SD;
 using Testing.DanamonNew.Models.Dto;
 using System.Security.Cryptography;
 using Microsoft.CodeAnalysis.Text;
+using System.Reflection;
+using System.IO;
 
 
 namespace Testing.DanamonNew.Logic
@@ -13,67 +15,68 @@ namespace Testing.DanamonNew.Logic
     public class GeneralLogic
     {
 
-        public string GenerateSigniture(SD.ApiType apiType, SD.FunctionDBIType functionDBIType, string contentText)
+        public static string GenerateSigniture(SD.ApiType apiType, SD.FunctionDBIType functionDBIType, string contentText)
         {
-            string result = string.Empty;
-            string rawData = string.Empty;
-            RSAParameters privateKey = new RSAParameters();
-            string textFilePath = @"";
-
-
-
-
-            switch (functionDBIType)
+            try
             {
-                case FunctionDBIType.SC_73:
-                    if (File.Exists(textFilePath))
-                    {
-                        string[] strKey = File.ReadAllLines(textFilePath);
-                    }
+                string result = string.Empty;
+                string rawData = string.Empty;
+                RSAParameters privateKey = new RSAParameters();
+                string textFilePath = Path.Combine(Environment.CurrentDirectory, @"Data\", "privateKey.pem");
 
-                    using (var stream = File.OpenRead("@tmp"))
-                    {
-                        using (var reader = new PemUtils.PemReader(stream))
+                switch (functionDBIType)
+                {
+                    case FunctionDBIType.SC_73:
+                        if (File.Exists(textFilePath))
                         {
-                            privateKey = reader.ReadRsaKey();
+                            using (var stream = File.OpenRead(textFilePath))
+                            {
+                                using (var reader = new PemUtils.PemReader(stream))
+                                {
+                                    privateKey = reader.ReadRsaKey();
+                                }
+                            }
                         }
-                    }
+
+                        break;
+                    case FunctionDBIType.SC_24:
+                    case FunctionDBIType.SC_25:
 
 
-                    break;
-                case FunctionDBIType.SC_24:
-                case FunctionDBIType.SC_25:
-
-
-                    switch (apiType)
-                    {
-                        case ApiType.POST:
-                        case ApiType.PUT:
-                            //relative url +bdi timestamp + secret key + additional key + request body
+                        switch (apiType)
+                        {
+                            case ApiType.POST:
+                            case ApiType.PUT:
+                                //relative url +bdi timestamp + secret key + additional key + request body
 
 
 
-                            break;
-                        case ApiType.DELETE:
-                        case ApiType.GET:
-                            //relative url +bdi timestamp + secret key + additional key
+                                break;
+                            case ApiType.DELETE:
+                            case ApiType.GET:
+                                //relative url +bdi timestamp + secret key + additional key
 
 
 
 
-                            break;
-                        default:
-                            break;
-                    }
-                    break;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                }
+
+                result = GenerateSHA256(rawData);
+
+                return result;
             }
-
-            result = GenerateSHA256(rawData);
-
-            return result;
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
 
-        private string GenerateSHA256(string contentText)
+        private static string GenerateSHA256(string contentText)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
@@ -128,3 +131,4 @@ namespace Testing.DanamonNew.Logic
 
         }
     }
+}
