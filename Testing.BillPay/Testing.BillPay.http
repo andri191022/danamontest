@@ -1,0 +1,6 @@
+@Testing.BillPay_HostAddress = http://localhost:5012
+
+GET {{Testing.BillPay_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

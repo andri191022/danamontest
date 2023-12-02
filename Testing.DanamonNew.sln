@@ -5,6 +5,10 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing.DanamonNew", "Testing.DanamonNew\Testing.DanamonNew.csproj", "{64063371-9E68-4977-93BF-FA8D89C161E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{C6BD043A-295B-4B07-A69C-A286767B8A2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.BillPay", "Testing.BillPay\Testing.BillPay.csproj", "{FA88D553-D13B-463C-9B24-40D5E8A9E970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{64063371-9E68-4977-93BF-FA8D89C161E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64063371-9E68-4977-93BF-FA8D89C161E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64063371-9E68-4977-93BF-FA8D89C161E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA88D553-D13B-463C-9B24-40D5E8A9E970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA88D553-D13B-463C-9B24-40D5E8A9E970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA88D553-D13B-463C-9B24-40D5E8A9E970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA88D553-D13B-463C-9B24-40D5E8A9E970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FA88D553-D13B-463C-9B24-40D5E8A9E970} = {C6BD043A-295B-4B07-A69C-A286767B8A2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E062776F-C962-4144-BB7E-72200B0F2BAD}
