@@ -38,6 +38,9 @@ namespace Testing.DanamonNew.Logic
                             }
                         }
 
+                        string xx = GGG();
+
+
                         break;
                     case FunctionDBIType.SC_24:
                     case FunctionDBIType.SC_25:
@@ -129,6 +132,26 @@ namespace Testing.DanamonNew.Logic
                 return builder.ToString();
             }
 
+        }
+
+
+        private static string GGG()
+        {
+            string data = "Hello, world!";
+            string privateKey = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA3GkdqJEUFUcTkZVHdF2aQn/mBMlPcZiIwTUwCYXaYMKF2OEpJPZ/s+lzrCsIJU0WuGwNiZdBGqQrFkAqwEb6dVNybTmr/NQWtGKcRWvHgWWxCvfTpDJOa/IhkfqbCQeWtEgwKG1dvJEyYUrCJmVVdLqRDnjCvvIWcZHhOaCwLnfDnMX+rOEp+EZOJtq2YmRuuPcKbYIrAqzIiM0qOcDnTcAw0WmGwNybJkf/TQdEuHXbTvHkWrMG+sGmrOE5yB0OzDnIiJPnWmwvNi5TsE/cD0s1i/mWmIjNnHdFkA6Dd1GcqUgLdvIbx2sEuC6nkFJbLs1qvNKC3mr/pTd7LKcXgA2O2qxCZfTNXOdSyJGg8W0C7WWt8uRKGhLvJhDsRNsEuQcFsFWwmOaIkNiCJcE/yFZTcSy4b8dvhgC3oqQ7cjnFmwmJ8wkHKb38oBZuHrjn1SdKWdSvHcZvUc/uTdEeKcMmLHQhxuMNsPmXoEpPJQTaWbBVePkWu/IxkdvP2aFvUYaC/HnFQMVn/aBnI0HvRiOXWwLnkJFuVsTvPv+PuOQaCiIUeBvPcBMdIa+qA==\n-----END RSA PRIVATE KEY-----";
+
+            var rsa = RSA.Create();
+            rsa.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out int _);
+
+            var dataBytes = Encoding.UTF8.GetBytes(data);
+            var signatureBytes = rsa.SignData(dataBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+
+            return Convert.ToBase64String(signatureBytes);
+
+
+            //string signature = RSAKeySignatureGenerator.GenerateSignature(data, privateKey);
+
+            //Console.WriteLine($"Signature: {signature}");
         }
     }
 }

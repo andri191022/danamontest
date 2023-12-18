@@ -698,3 +698,5 @@ D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\scopedcss\projectbundl
 D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.csproj.CopyComplete
 D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.genruntimeconfig.cache
 D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\ref\Testing.DanamonNew.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\DerConverter.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\PemUtils.dll

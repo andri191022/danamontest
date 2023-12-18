@@ -52,5 +52,15 @@ namespace Testing.BillPay.Service
                 ContentType = SD.ContentType.Json
             });
         }
+
+        public async Task<ResponseDto?> LoginAuth02Async(Auth02Dto auth02Dto)
+        {
+            return await _baseService.postAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,
+                Data = auth02Dto,
+                Url = SD.AuthAPIBase  //+ "?grant_type=client_credentials"
+            });
+        }
     }
 }

@@ -1,0 +1,13 @@
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Testing.BillPay.exe
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\appsettings.Development.json
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\appsettings.json
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Testing.BillPay.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Testing.BillPay.deps.json
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Testing.BillPay.runtimeconfig.json
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Testing.BillPay.pdb
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Microsoft.OpenApi.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Newtonsoft.Json.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\RestSharp.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Swashbuckle.AspNetCore.Swagger.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Tutorial\DanamonTest\danamontest\Testing.BillPay\obj\Docker\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

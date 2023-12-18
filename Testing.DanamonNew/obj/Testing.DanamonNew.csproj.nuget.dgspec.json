@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
+    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
   },
   "projects": {
-    "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
+    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "projectName": "Testing.DanamonNew",
-        "projectPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\obj\\",
+        "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",

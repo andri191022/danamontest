@@ -18,7 +18,7 @@ namespace Testing.BillPay.Controllers
 
 
         public BillPayController(IAuthService authService, ITokenProvider tokenProvider, IDanamonService danamonService)
-        {            
+        {
             _authService = authService;
             _tokenProvider = tokenProvider;
             _danamonService = danamonService;
@@ -47,7 +47,7 @@ namespace Testing.BillPay.Controllers
                 AuthResponseDto authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
 
                 //  await SignInUser(authResponseDto);
-               // _tokenProvider.SetToken(authResponseDto.access_token);
+                // _tokenProvider.SetToken(authResponseDto.access_token);
 
                 return authResponseDto.access_token;
             }
@@ -58,13 +58,35 @@ namespace Testing.BillPay.Controllers
             }
 
 
-          
+
         }
 
         // POST api/<BillPayController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<AuthResponseDto> Post([FromBody] Auth02Dto obj)
         {
+            //DanamonAuthDto obj = new DanamonAuthDto();
+            AuthResponseDto authResponseDto = new AuthResponseDto();
+
+            ResponseDto? responseDto = await _danamonService.LoginAuth02Async(obj);
+
+            if (responseDto != null && responseDto.IsSuccess)
+            {
+                var jsonString = JsonConvert.SerializeObject(responseDto.Result);
+
+                authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
+
+                //  await SignInUser(authResponseDto);
+                // _tokenProvider.SetToken(authResponseDto.access_token);
+
+                return authResponseDto;
+            }
+            else
+            {
+
+                return authResponseDto;
+            }
+
         }
 
         // PUT api/<BillPayController>/5
