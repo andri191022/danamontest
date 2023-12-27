@@ -23,12 +23,13 @@ namespace Testing.BillPay.Service
                 {
                     BDI_Signature = registvarequestDto.BDISignature,
                     BDI_Key = registvarequestDto.BDIKey,
-                    BDI_Timestamp = registvarequestDto.BDITimestamp
+                    BDI_Timestamp = registvarequestDto.BDITimestamp,
+                    Authorization= @"Bearer " + registvarequestDto.Authorization
 
                 },
                 Url = SD.RegisterVaAPIBase,
                 ContentType = SD.ContentType.Json
-            });
+            }, false);
         }
 
         public async Task<ResponseDto?> LoginAuthAsync(DanamonAuthDto loginRequestDto)

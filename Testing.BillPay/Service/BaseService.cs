@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using RestSharp;
 using System.Net;
 using System.Text;
@@ -99,11 +100,11 @@ namespace Testing.BillPay.Service
                     message.Headers.Add("Accept", "application/json");
                 }
                 //token
-                if (withBearer)
-                {
-                    var token = _tokenProvider.GetToken();
-                    message.Headers.Add("Authorization", $"Bearer {token}");
-                }
+                //if (withBearer)
+                //{
+                //    var token = ""; //_tokenProvider.GetToken();
+                //    message.Headers.Add("Authorization", $"Bearer {token}");
+                //}
                 //header
                 if (requestDto.Header != null)
                 {
@@ -112,6 +113,8 @@ namespace Testing.BillPay.Service
                     if (!string.IsNullOrEmpty(headerDto.BDI_Key)) message.Headers.Add("BDI-Key", headerDto.BDI_Key);
                     if (!string.IsNullOrEmpty(headerDto.BDI_Timestamp)) message.Headers.Add("BDI-Timestamp", headerDto.BDI_Timestamp);
                     if (!string.IsNullOrEmpty(headerDto.BDI_Signature)) message.Headers.Add("BDI-Signature", headerDto.BDI_Signature);
+                    if (!string.IsNullOrEmpty(headerDto.Authorization)) message.Headers.Add("Authorization", headerDto.Authorization);
+
                 }
                 //
 

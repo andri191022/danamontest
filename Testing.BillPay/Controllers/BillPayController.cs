@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Testing.BillPay.Models;
 using Testing.BillPay.Models.Dto;
 using Testing.BillPay.Service.IService;
 
@@ -7,7 +8,7 @@ using Testing.BillPay.Service.IService;
 
 namespace Testing.BillPay.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class BillPayController : ControllerBase
     {
@@ -25,45 +26,38 @@ namespace Testing.BillPay.Controllers
         }
 
 
-        // GET: api/<BillPayController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        // GET api/<BillPayController>
+        [HttpPost]
+        public async Task<ResponseDto> CreateVA(string tokenId, [FromBody] RegistrationVARequest obj)
         {
-            return new string[] { "value1", "value2" };
-        }
+            AuthResponseDto tkn = JsonConvert.DeserializeObject<AuthResponseDto>(tokenId);
 
-        // GET api/<BillPayController>/5
-        [HttpGet("{id}")]
-        public async Task<string> GetAsync(int id)
-        {
-            DanamonAuthDto obj = new DanamonAuthDto();
+            ResponseDto? response = new ResponseDto();
 
-            ResponseDto? responseDto = await _danamonService.LoginAuthAsync(obj);
-
-            if (responseDto != null && responseDto.IsSuccess)
+            if (!string.IsNullOrEmpty(tkn.access_token))
             {
-                var jsonString = JsonConvert.SerializeObject(responseDto.Result);
+                RegistrationVARequestDto objDto = new RegistrationVARequestDto();
 
-                AuthResponseDto authResponseDto = JsonConvert.DeserializeObject<AuthResponseDto>(jsonString);
+                objDto.registrationVARequest = obj;
 
-                //  await SignInUser(authResponseDto);
-                // _tokenProvider.SetToken(authResponseDto.access_token);
+                objDto.BDISignature = "f4e4d374c813fd1689bdb1bf1f51653f";
+                objDto.BDIKey = Utility.SD.BDIKey;
+                objDto.BDITimestamp = DateTime.Now.AddMinutes(-10).ToString("yyyy-MM-ddTHH:HH:mm:ssZ"); //DateTime.Now.AddHours(-1).ToUniversalTime().ToString("o");
+                objDto.Authorization = tkn.access_token;
 
-                return authResponseDto.access_token;
+                response = await _danamonService.RegistrationVAAsync(objDto);
             }
             else
             {
-
-                return "value";
+                response.Message = "token failed";
             }
 
-
-
+            return response;
         }
 
         // POST api/<BillPayController>
         [HttpPost]
-        public async Task<AuthResponseDto> Post([FromBody] Auth02Dto obj)
+        public async Task<AuthResponseDto> GetAuth02([FromBody] Auth02Dto obj)
         {
             //DanamonAuthDto obj = new DanamonAuthDto();
             AuthResponseDto authResponseDto = new AuthResponseDto();
@@ -89,16 +83,39 @@ namespace Testing.BillPay.Controllers
 
         }
 
-        // PUT api/<BillPayController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+
+        [HttpPost]
+        public async Task<ResponseDto> AccountInquiryBalance(string tokenId, [FromBody] AccountInquiryBalanceRequest obj)
         {
+            AuthResponseDto tkn = JsonConvert.DeserializeObject<AuthResponseDto>(tokenId);
+          
+
+            ResponseDto? response = new ResponseDto();
+
+            if (!string.IsNullOrEmpty(tkn.access_token))
+            {
+                AccountInquiryBalanceRequestDto objDto = new AccountInquiryBalanceRequestDto();
+
+                HeaderDto objHdr = new HeaderDto
+                {
+                    Authorization = tkn.access_token,
+                    BDI_Key = Utility.SD.BDIKey,
+                    BDI_Signature = "f4e4d374c813fd1689bdb1bf1f51653f",
+                    BDI_Timestamp = DateTime.Now.AddMinutes(-10).ToString("yyyy-MM-ddTHH:HH:mm:ssZ"),
+                };
+
+                objDto.AccountInquiryBalanceRequest = obj;
+                objDto.Header = objHdr;                
+
+                response = await _danamonService.AccountInquiryBalanceAsync(objDto);
+            }
+            else
+            {
+                response.Message = "token failed";
+            }
+
+            return response;
         }
 
-        // DELETE api/<BillPayController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
