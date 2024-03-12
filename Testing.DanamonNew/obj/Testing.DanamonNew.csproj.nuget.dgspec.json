@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
+    "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {}
   },
   "projects": {
-    "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
+    "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectUniqueName": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "projectName": "Testing.DanamonNew",
-        "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+        "projectPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Testing.DanamonNew\\obj\\",
+        "outputPath": "D:\\Andrik\\danamontest\\Testing.DanamonNew\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,15 +42,15 @@
           "dependencies": {
             "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.19.5, )"
+              "version": "[1.19.6, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.1, )"
             },
             "PemUtils": {
               "target": "Package",
@@ -62,7 +62,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[7.0.3, )"
+              "version": "[7.4.0, )"
             },
             "System.Net.Http": {
               "target": "Package",

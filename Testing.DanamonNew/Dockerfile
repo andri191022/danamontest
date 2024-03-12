@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["Testing.DanamonNew/Testing.DanamonNew.csproj", "Testing.DanamonNew/"]
+COPY ["Testing.DanamonNew.csproj", "Testing.DanamonNew/"]
 RUN dotnet restore "Testing.DanamonNew/Testing.DanamonNew.csproj"
 COPY . .
 WORKDIR "/src/Testing.DanamonNew"

@@ -700,3 +700,10 @@ D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\Testing.DanamonNew.gen
 D:\Andrik\danamontest\Testing.DanamonNew\obj\Debug\net8.0\ref\Testing.DanamonNew.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\DerConverter.dll
 E:\Tutorial\DanamonTest\danamontest\Testing.DanamonNew\bin\Debug\net8.0\PemUtils.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+D:\Andrik\danamontest\Testing.DanamonNew\bin\Debug\net8.0\Microsoft.JSInterop.dll
