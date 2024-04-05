@@ -3718,11 +3718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Project\\testing\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
       "projectName": "WorkerService2",
-      "projectPath": "E:\\Project\\testing\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+      "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Project\\testing\\WorkerService2\\WorkerService2\\obj\\",
+      "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",

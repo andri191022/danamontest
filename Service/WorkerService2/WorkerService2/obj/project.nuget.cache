@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jeFsEAmFB2e4Pulr0suM3ivmrTEQglhpKACLXjO87FeawmXpmPxGvsjGQo18yUEvhzhU7MQF43GQ5kdcvFnUYw==",
+  "dgSpecHash": "m3i8pbsuz76BAYRBd/Ew0MSfgyBDUoEaYtttF7NRlzXJRfUf+2OOQZqhFNf6CDVfDpBeLclRJWVW1su5ARD9UQ==",
   "success": true,
-  "projectFilePath": "E:\\Project\\testing\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+  "projectFilePath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andri\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
