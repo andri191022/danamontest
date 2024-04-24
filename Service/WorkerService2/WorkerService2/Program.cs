@@ -42,6 +42,8 @@ builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddSingleton<ICompany, Company>();
 
 // Register the background service
+builder.Services.AddHostedService<Worker>();
+
 builder.Services.AddHostedService<CompanyBackgroundService>();
 
 
