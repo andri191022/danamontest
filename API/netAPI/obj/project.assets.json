@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\netAPI\\netAPI.csproj",
+      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\netAPI\\netAPI.csproj",
       "projectName": "netAPI",
-      "projectPath": "E:\\Tutorial\\DanamonTest\\netAPI\\netAPI.csproj",
+      "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\netAPI\\netAPI.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tutorial\\DanamonTest\\netAPI\\obj\\",
+      "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\netAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
