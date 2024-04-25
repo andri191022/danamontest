@@ -63,3 +63,5 @@ E:\Tutorial\DanamonTest\danamontest\API\netAPI\obj\Debug\net8.0\refint\netAPI.dl
 E:\Tutorial\DanamonTest\danamontest\API\netAPI\obj\Debug\net8.0\netAPI.pdb
 E:\Tutorial\DanamonTest\danamontest\API\netAPI\obj\Debug\net8.0\netAPI.genruntimeconfig.cache
 E:\Tutorial\DanamonTest\danamontest\API\netAPI\obj\Debug\net8.0\ref\netAPI.dll
+E:\Tutorial\DanamonTest\danamontest\API\netAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Tutorial\DanamonTest\danamontest\API\netAPI\bin\Debug\net8.0\RestSharp.dll

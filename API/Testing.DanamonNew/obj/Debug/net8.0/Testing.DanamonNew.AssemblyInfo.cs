@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testing.DanamonNew")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1668f80570356dda8bebbbd0205ab1e63df830f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testing.DanamonNew")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testing.DanamonNew")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

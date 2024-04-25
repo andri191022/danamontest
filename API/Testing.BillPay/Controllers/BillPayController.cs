@@ -86,7 +86,7 @@ namespace Testing.BillPay.Controllers
 
         [HttpPost]
         public async Task<ResponseDto> AccountInquiryBalance(string tokenId, [FromBody] AccountInquiryBalanceRequest obj)
-        {
+            {
             AuthResponseDto tkn = JsonConvert.DeserializeObject<AuthResponseDto>(tokenId);
           
 

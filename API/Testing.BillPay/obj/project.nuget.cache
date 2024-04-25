@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "VXQFe+HPbHJbR9+hGfmrMOHlsVvceNYq7jlLGVEdZni2m5euEIBIgPpVYwPshAE24tkH+jGbGauhkYMjfWihig==",
+  "dgSpecHash": "ctUnwY0u7IUnMvH5c3ZMonsIq5Mb841yLRFrfTT0HNljj8ub1eLcD0e2+N2eKGTZZN3ccR4Olq55onbE2HisOA==",
   "success": true,
   "projectFilePath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\andri\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
