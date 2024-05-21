@@ -87,7 +87,7 @@ namespace Testing.BillPay.Service
                 {
                     MaxTimeout = -1,
                     RemoteCertificateValidationCallback = (sender, certification, chain, sslPolicyError) => true,
-                    //  Proxy= new System.Net.WebProxy("http://idnproxy",8080),  //----> jika menggunakan proxy
+                    Proxy = new System.Net.WebProxy("http://idnproxy", 8080),  //----> jika menggunakan proxy
                 };
                 var client = new RestClient(options);
                 var request = new RestRequest(requestDto.Url, RestSharp.Method.Post);
@@ -97,11 +97,19 @@ namespace Testing.BillPay.Service
 
                 // string token = System.Convert.ToBase64String(encdo);
                 //request.AddHeader("Authorization", $"Basic {token}");
-                string dtTime = DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz");
+
+                string dtTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz");
+                string signiturex = GeneralLogic.GenerateSigniture(Utility.SD.ApiType.POST, Utility.SD.FunctionDBIType.SC_73, Utility.SD.OACClientID + "|" + dtTime);
+
+
+                Console.WriteLine(dtTime);
+                Console.WriteLine(Utility.SD.OACClientID);
+                Console.WriteLine(signiturex);
+
                 request.AddHeader("X-TIMESTAMP", dtTime);
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("X-CLIENT-KEY", Utility.SD.OACClientID);
-                request.AddHeader("X-SIGNITURE", GeneralLogic.GenerateSigniture(Utility.SD.ApiType.POST, Utility.SD.FunctionDBIType.SC_73, Utility.SD.OACClientID + "|" + dtTime));
+                request.AddHeader("X-SIGNITURE", signiturex);
 
                 request.AddParameter("grantType", "client_credentials");
 

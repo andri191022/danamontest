@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography;
+﻿using Org.BouncyCastle.Utilities.Encoders;
+using System.Security.Cryptography;
 using Testing.BillPay.Utility;
 using static Testing.BillPay.Utility.SD;
 
@@ -26,6 +27,7 @@ namespace Testing.BillPay.Logic
                         {
                             privateKey = RSAHelper.ReadOpenSshPrivateKey(textFilePath);
                             result = RSAHelper.GenerateSHA256withRSA(data, privateKey);
+                            
                         }
 
                         break;

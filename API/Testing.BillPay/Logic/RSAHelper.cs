@@ -1,7 +1,10 @@
-﻿using Org.BouncyCastle.Crypto;
+﻿using Newtonsoft.Json;
+using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 using Org.BouncyCastle.Security;
+using Org.BouncyCastle.Utilities.Encoders;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -41,9 +44,22 @@ namespace Testing.BillPay.Logic
                     resultData = rsa.SignHash(hashedData, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
                 }
             }
+            return Hex.ToHexString(resultData);
 
-            return Convert.ToBase64String(resultData);
+            // return Convert.ToBase64String(resultData);
         }
+
+        //public string GenerateSha256WithRsa(string data, string privateKeyJson)
+        //{
+        //    var signatureKey = JsonConvert.DeserializeObject<RsaPrivateKeyParameters>(privateKeyJson).ToRsaPrivateCrtKeyParameters();
+
+        //    var dataToSign = Encoding.UTF8.GetBytes(data);
+
+        //    var signer = new Sha256WithRsaSigner(signatureKey);
+        //    var signature = signer.GenerateSignature();
+
+        //    return Hex.ToHexString(signature);
+        //}
 
     }
 }
