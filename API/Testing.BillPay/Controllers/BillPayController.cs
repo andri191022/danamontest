@@ -85,6 +85,35 @@ namespace Testing.BillPay.Controllers
 
 
         [HttpPost]
+        public async Task<AuthResponseB2BDto> GetAuthB2B()
+        {
+            //DanamonAuthDto obj = new DanamonAuthDto();
+            AuthResponseB2BDto authResponseDto = new AuthResponseB2BDto();
+
+            ResponseDto? responseDto = await _danamonService.LoginAuthB2BAsync();
+
+            if (responseDto != null && responseDto.IsSuccess)
+            {
+                var jsonString = JsonConvert.SerializeObject(responseDto.Result);
+
+                authResponseDto = JsonConvert.DeserializeObject<AuthResponseB2BDto>(jsonString);
+
+                //  await SignInUser(authResponseDto);
+                // _tokenProvider.SetToken(authResponseDto.access_token);
+
+                return authResponseDto;
+            }
+            else
+            {
+
+                return authResponseDto;
+            }
+
+        }
+
+
+
+        [HttpPost]
         public async Task<ResponseDto> AccountInquiryBalance(string tokenId, [FromBody] AccountInquiryBalanceRequest obj)
             {
             AuthResponseDto tkn = JsonConvert.DeserializeObject<AuthResponseDto>(tokenId);

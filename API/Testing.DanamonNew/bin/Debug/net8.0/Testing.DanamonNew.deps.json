@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v8.0": {
       "Testing.DanamonNew/1.0.0": {
         "dependencies": {
+          "BouncyCastle.Cryptography": "2.3.1",
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": "8.0.2",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.1",
-          "PemUtils": "3.0.0.82",
           "RestSharp": "110.2.0",
           "System.IdentityModel.Tokens.Jwt": "7.4.0",
           "System.Net.Http": "4.3.4",
@@ -21,11 +21,11 @@
           "Testing.DanamonNew.dll": {}
         }
       },
-      "DerConverter/3.0.0.82": {
+      "BouncyCastle.Cryptography/2.3.1": {
         "runtime": {
-          "lib/netstandard2.0/DerConverter.dll": {
-            "assemblyVersion": "3.0.0.82",
-            "fileVersion": "3.0.0.82"
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.3.1.17862"
           }
         }
       },
@@ -1504,17 +1504,6 @@
           }
         }
       },
-      "PemUtils/3.0.0.82": {
-        "dependencies": {
-          "DerConverter": "3.0.0.82"
-        },
-        "runtime": {
-          "lib/netstandard2.0/PemUtils.dll": {
-            "assemblyVersion": "3.0.0.82",
-            "fileVersion": "3.0.0.82"
-          }
-        }
-      },
       "RestSharp/110.2.0": {
         "dependencies": {
           "System.Text.Json": "8.0.0"
@@ -2115,12 +2104,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DerConverter/3.0.0.82": {
+    "BouncyCastle.Cryptography/2.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6x9+tHjO7IqGtgLlPAc6P1gKGmSl4s5c35M2g6DoOWHWY5RRYRX5LioXD8347Uf4VIuNGoYvRowKiJFHhkkFRA==",
-      "path": "derconverter/3.0.0.82",
-      "hashPath": "derconverter.3.0.0.82.nupkg.sha512"
+      "sha512": "sha512-buwoISwecYke3CmgG1AQSg+sNZjJeIb93vTAtJiHZX35hP/teYMxsfg0NDXGUKjGx6BKBTNKc77O2M3vKvlXZQ==",
+      "path": "bouncycastle.cryptography/2.3.1",
+      "hashPath": "bouncycastle.cryptography.2.3.1.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2926,13 +2915,6 @@
       "sha512": "sha512-T/igBDLXCd+pH3YTWgGVNvYSOwbwaT30NyyM9ONjvlHlmaUjKBJpr9kH0AeL+Ado4EJsBhU3qxXVc6lyrpRcMw==",
       "path": "nuget.versioning/6.3.1",
       "hashPath": "nuget.versioning.6.3.1.nupkg.sha512"
-    },
-    "PemUtils/3.0.0.82": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-LtsJ8LPfBN65+/ONfkJg8ZqcAxm59xRy4o5ocn2m4mAYo0EmmVslZ4SwcAViwfYDPL08Hu/vBbO2qamhtadeyQ==",
-      "path": "pemutils/3.0.0.82",
-      "hashPath": "pemutils.3.0.0.82.nupkg.sha512"
     },
     "RestSharp/110.2.0": {
       "type": "package",

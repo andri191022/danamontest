@@ -2,13 +2,17 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "DerConverter/3.0.0.82": {
+      "BouncyCastle.Cryptography/2.3.1": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/DerConverter.dll": {}
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/DerConverter.dll": {}
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -1941,18 +1945,6 @@
           }
         }
       },
-      "PemUtils/3.0.0.82": {
-        "type": "package",
-        "dependencies": {
-          "DerConverter": "3.0.0.82"
-        },
-        "compile": {
-          "lib/netstandard2.0/PemUtils.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/PemUtils.dll": {}
-        }
-      },
       "RestSharp/110.2.0": {
         "type": "package",
         "dependencies": {
@@ -3270,18 +3262,24 @@
     }
   },
   "libraries": {
-    "DerConverter/3.0.0.82": {
-      "sha512": "6x9+tHjO7IqGtgLlPAc6P1gKGmSl4s5c35M2g6DoOWHWY5RRYRX5LioXD8347Uf4VIuNGoYvRowKiJFHhkkFRA==",
+    "BouncyCastle.Cryptography/2.3.1": {
+      "sha512": "buwoISwecYke3CmgG1AQSg+sNZjJeIb93vTAtJiHZX35hP/teYMxsfg0NDXGUKjGx6BKBTNKc77O2M3vKvlXZQ==",
       "type": "package",
-      "path": "derconverter/3.0.0.82",
+      "path": "bouncycastle.cryptography/2.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "derconverter.3.0.0.82.nupkg.sha512",
-        "derconverter.nuspec",
-        "lib/net451/DerConverter.dll",
-        "lib/net471/DerConverter.dll",
-        "lib/netstandard2.0/DerConverter.dll"
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.3.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
       ]
     },
     "Humanizer/2.14.1": {
@@ -6828,20 +6826,6 @@
         "nuget.versioning.nuspec"
       ]
     },
-    "PemUtils/3.0.0.82": {
-      "sha512": "LtsJ8LPfBN65+/ONfkJg8ZqcAxm59xRy4o5ocn2m4mAYo0EmmVslZ4SwcAViwfYDPL08Hu/vBbO2qamhtadeyQ==",
-      "type": "package",
-      "path": "pemutils/3.0.0.82",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net451/PemUtils.dll",
-        "lib/net471/PemUtils.dll",
-        "lib/netstandard2.0/PemUtils.dll",
-        "pemutils.3.0.0.82.nupkg.sha512",
-        "pemutils.nuspec"
-      ]
-    },
     "RestSharp/110.2.0": {
       "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
       "type": "package",
@@ -9867,10 +9851,10 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BouncyCastle.Cryptography >= 2.3.1",
       "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter >= 8.0.2",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.1",
-      "PemUtils >= 3.0.0.82",
       "RestSharp >= 110.2.0",
       "System.IdentityModel.Tokens.Jwt >= 7.4.0",
       "System.Net.Http >= 4.3.4",
@@ -9916,6 +9900,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "BouncyCastle.Cryptography": {
+            "target": "Package",
+            "version": "[2.3.1, )"
+          },
           "Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter": {
             "target": "Package",
             "version": "[8.0.2, )"
@@ -9927,10 +9915,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[8.0.1, )"
-          },
-          "PemUtils": {
-            "target": "Package",
-            "version": "[3.0.0.82, )"
           },
           "RestSharp": {
             "target": "Package",

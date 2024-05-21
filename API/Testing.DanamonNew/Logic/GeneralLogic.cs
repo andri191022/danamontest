@@ -1,45 +1,34 @@
-﻿using Microsoft.CodeAnalysis.Operations;
-using static System.Net.Mime.MediaTypeNames;
-using System.Text;
+﻿using System.Text;
 using Testing.DanamonNew.Utility;
 using static Testing.DanamonNew.Utility.SD;
-using Testing.DanamonNew.Models.Dto;
 using System.Security.Cryptography;
-using Microsoft.CodeAnalysis.Text;
-using System.Reflection;
-using System.IO;
-
 
 namespace Testing.DanamonNew.Logic
 {
     public class GeneralLogic
     {
 
-        public static string GenerateSigniture(SD.ApiType apiType, SD.FunctionDBIType functionDBIType, string contentText)
+        public static string GenerateSigniture(SD.ApiType apiType, SD.FunctionDBIType functionDBIType, string data)
         {
             try
             {
                 string result = string.Empty;
-                string rawData = string.Empty;
+               // string rawData = string.Empty;
                 RSAParameters privateKey = new RSAParameters();
-                string textFilePath = Path.Combine(Environment.CurrentDirectory, @"Data\", "privateKey.pem");
+                string textFilePath = Path.Combine(Environment.CurrentDirectory, @"Data\", "id_rsa");
+
+                //string fileContent = string.Empty;
+                //var rsaKeyGenerator = new RsaKeyGenerator();
+                // var privkey = rsaKeyGenerator.GenerateKeyPair(2048);
 
                 switch (functionDBIType)
                 {
                     case FunctionDBIType.SC_73:
                         if (File.Exists(textFilePath))
                         {
-                            using (var stream = File.OpenRead(textFilePath))
-                            {
-                                using (var reader = new PemUtils.PemReader(stream))
-                                {
-                                    privateKey = reader.ReadRsaKey();
-                                }
-                            }
+                            privateKey = RSAHelper.ReadOpenSshPrivateKey(textFilePath);
+                            result = RSAHelper.GenerateSHA256withRSA(data, privateKey);
                         }
-
-                        string xx = GGG();
-
 
                         break;
                     case FunctionDBIType.SC_24:
@@ -69,7 +58,7 @@ namespace Testing.DanamonNew.Logic
                         break;
                 }
 
-                result = GenerateSHA256(rawData);
+                //result = GenerateSHA256(rawData);
 
                 return result;
             }
@@ -79,40 +68,21 @@ namespace Testing.DanamonNew.Logic
             }
         }
 
-        private static string GenerateSHA256(string contentText)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] inputBytes = Encoding.UTF8.GetBytes(contentText);
-                byte[] hashBytes = sha256.ComputeHash(inputBytes);
+        //private static string GenerateSHA256(string contentText)
+        //{
+        //    using (SHA256 sha256 = SHA256.Create())
+        //    {
+        //        byte[] inputBytes = Encoding.UTF8.GetBytes(contentText);
+        //        byte[] hashBytes = sha256.ComputeHash(inputBytes);
 
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < hashBytes.Length; i++)
-                {
-                    builder.Append(hashBytes[i].ToString("x2"));
-                }
-                return builder.ToString();
-            }
-        }
-
-
-        private string GenerateSHA256withRSA(string contentText, RSAParameters privateKey)
-        {
-            byte[] resultData; string result = string.Empty;
-            using (var rsa = RSA.Create())
-            {
-                rsa.ImportParameters(privateKey);
-
-                byte[] dataBytes = Encoding.UTF8.GetBytes(contentText);
-                using (SHA256 sha256 = SHA256.Create())
-                {
-                    byte[] hashedData = sha256.ComputeHash(dataBytes);
-                    resultData = rsa.SignHash(hashedData, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
-                }
-            }
-
-            return Convert.ToBase64String(resultData);
-        }
+        //        StringBuilder builder = new StringBuilder();
+        //        for (int i = 0; i < hashBytes.Length; i++)
+        //        {
+        //            builder.Append(hashBytes[i].ToString("x2"));
+        //        }
+        //        return builder.ToString();
+        //    }
+        //}
 
 
         private string GenerateHMAC_SHA512(string contentText, string key)
@@ -134,24 +104,47 @@ namespace Testing.DanamonNew.Logic
 
         }
 
+        //private static string GenerateSHA256withRSA(string data, string privateKey)
+        //{
+        //    // Create a new instance of the RSACryptoServiceProvider class
+        //    using (var rsa = new RSACryptoServiceProvider())
+        //    {
+        //        // Import the private key
+        //        rsa.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out _);
 
-        private static string GGG()
-        {
-            string data = "Hello, world!";
-            string privateKey = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA3GkdqJEUFUcTkZVHdF2aQn/mBMlPcZiIwTUwCYXaYMKF2OEpJPZ/s+lzrCsIJU0WuGwNiZdBGqQrFkAqwEb6dVNybTmr/NQWtGKcRWvHgWWxCvfTpDJOa/IhkfqbCQeWtEgwKG1dvJEyYUrCJmVVdLqRDnjCvvIWcZHhOaCwLnfDnMX+rOEp+EZOJtq2YmRuuPcKbYIrAqzIiM0qOcDnTcAw0WmGwNybJkf/TQdEuHXbTvHkWrMG+sGmrOE5yB0OzDnIiJPnWmwvNi5TsE/cD0s1i/mWmIjNnHdFkA6Dd1GcqUgLdvIbx2sEuC6nkFJbLs1qvNKC3mr/pTd7LKcXgA2O2qxCZfTNXOdSyJGg8W0C7WWt8uRKGhLvJhDsRNsEuQcFsFWwmOaIkNiCJcE/yFZTcSy4b8dvhgC3oqQ7cjnFmwmJ8wkHKb38oBZuHrjn1SdKWdSvHcZvUc/uTdEeKcMmLHQhxuMNsPmXoEpPJQTaWbBVePkWu/IxkdvP2aFvUYaC/HnFQMVn/aBnI0HvRiOXWwLnkJFuVsTvPv+PuOQaCiIUeBvPcBMdIa+qA==\n-----END RSA PRIVATE KEY-----";
+        //        // Create a new instance of the SHA256 class
+        //        using (var sha256 = SHA256.Create())
+        //        {
+        //            // Compute the hash of the data
+        //            var hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(data));
 
-            var rsa = RSA.Create();
-            rsa.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out int _);
+        //            // Sign the hash with the private key
+        //            var signature = rsa.SignHash(hash, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
 
-            var dataBytes = Encoding.UTF8.GetBytes(data);
-            var signatureBytes = rsa.SignData(dataBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+        //            // Return the signature as a base64-encoded string
+        //            return Convert.ToBase64String(signature);
+        //        }
+        //    }
+        //}
 
-            return Convert.ToBase64String(signatureBytes);
+
+        //private static string GGG()
+        //{
+        //    string data = "Hello, world!";
+        //    string privateKey = "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEA3GkdqJEUFUcTkZVHdF2aQn/mBMlPcZiIwTUwCYXaYMKF2OEpJPZ/s+lzrCsIJU0WuGwNiZdBGqQrFkAqwEb6dVNybTmr/NQWtGKcRWvHgWWxCvfTpDJOa/IhkfqbCQeWtEgwKG1dvJEyYUrCJmVVdLqRDnjCvvIWcZHhOaCwLnfDnMX+rOEp+EZOJtq2YmRuuPcKbYIrAqzIiM0qOcDnTcAw0WmGwNybJkf/TQdEuHXbTvHkWrMG+sGmrOE5yB0OzDnIiJPnWmwvNi5TsE/cD0s1i/mWmIjNnHdFkA6Dd1GcqUgLdvIbx2sEuC6nkFJbLs1qvNKC3mr/pTd7LKcXgA2O2qxCZfTNXOdSyJGg8W0C7WWt8uRKGhLvJhDsRNsEuQcFsFWwmOaIkNiCJcE/yFZTcSy4b8dvhgC3oqQ7cjnFmwmJ8wkHKb38oBZuHrjn1SdKWdSvHcZvUc/uTdEeKcMmLHQhxuMNsPmXoEpPJQTaWbBVePkWu/IxkdvP2aFvUYaC/HnFQMVn/aBnI0HvRiOXWwLnkJFuVsTvPv+PuOQaCiIUeBvPcBMdIa+qA==\n-----END RSA PRIVATE KEY-----";
+
+        //    var rsa = RSA.Create();
+        //    rsa.ImportRSAPrivateKey(Convert.FromBase64String(privateKey), out int _);
+
+        //    var dataBytes = Encoding.UTF8.GetBytes(data);
+        //    var signatureBytes = rsa.SignData(dataBytes, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+
+        //    return Convert.ToBase64String(signatureBytes);
 
 
-            //string signature = RSAKeySignatureGenerator.GenerateSignature(data, privateKey);
+        //    //string signature = RSAKeySignatureGenerator.GenerateSignature(data, privateKey);
 
-            //Console.WriteLine($"Signature: {signature}");
-        }
+        //    //Console.WriteLine($"Signature: {signature}");
+        //}
     }
 }

@@ -6,6 +6,7 @@ namespace Testing.BillPay.Service.IService
     {
         Task<ResponseDto?> LoginAuthAsync(DanamonAuthDto loginRequestDto);
         Task<ResponseDto?> LoginAuth02Async(Auth02Dto loginRequestDto);
+        Task<ResponseDto?> LoginAuthB2BAsync();
 
         Task<ResponseDto?> RegistrationVAAsync(RegistrationVARequestDto registrationVaRequestDto);
 

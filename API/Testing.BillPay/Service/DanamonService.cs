@@ -63,5 +63,14 @@ namespace Testing.BillPay.Service
                 Url = SD.AuthAPIBase  //+ "?grant_type=client_credentials"
             });
         }
+
+        public async Task<ResponseDto?> LoginAuthB2BAsync()
+        {
+            return await _baseService.postB2BAsync(new RequestDto()
+            {
+                ApiType = SD.ApiType.POST,               
+                Url = SD.AuthB2BAPIBase  //+ "?grant_type=client_credentials"
+            });
+        }
     }
 }

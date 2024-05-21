@@ -7,5 +7,6 @@ namespace Testing.BillPay.Service.IService
         Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true);
 
         Task<ResponseDto?> postAsync(RequestDto requestDto);
+        Task<ResponseDto?> postB2BAsync(RequestDto requestDto);
     }
 }

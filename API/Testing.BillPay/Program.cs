@@ -28,6 +28,7 @@ builder.Services.AddHttpClient<IAuthService, AuthService>();
 builder.Services.AddHttpClient<IDanamonService, DanamonService>();
 
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
+SD.AuthB2BAPIBase = builder.Configuration["ServiceUrls:AuthB2BAPI"];
 SD.RegisterVaAPIBase = builder.Configuration["ServiceUrls:RegisterVaAPI"];
 
 //bdi

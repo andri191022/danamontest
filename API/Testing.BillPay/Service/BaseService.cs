@@ -3,13 +3,14 @@ using Newtonsoft.Json.Linq;
 using RestSharp;
 using System.Net;
 using System.Text;
+using Testing.BillPay.Logic;
 using Testing.BillPay.Models.Dto;
 using Testing.BillPay.Service.IService;
 using static Testing.BillPay.Utility.SD;
 
 namespace Testing.BillPay.Service
 {
-    public class BaseService: IBaseService
+    public class BaseService : IBaseService
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ITokenProvider _tokenProvider;
@@ -76,6 +77,70 @@ namespace Testing.BillPay.Service
 
 
         }
+
+        public async Task<ResponseDto?> postB2BAsync(RequestDto requestDto)
+        {
+            try
+            {
+                ResponseDto responseDto = new ResponseDto();
+                var options = new RestClientOptions()
+                {
+                    MaxTimeout = -1,
+                    RemoteCertificateValidationCallback = (sender, certification, chain, sslPolicyError) => true,
+                    //  Proxy= new System.Net.WebProxy("http://idnproxy",8080),  //----> jika menggunakan proxy
+                };
+                var client = new RestClient(options);
+                var request = new RestRequest(requestDto.Url, RestSharp.Method.Post);
+
+                //requestDto.Data = null;
+                //var encdo = System.Text.Encoding.UTF8.GetBytes(Utility.SD.OACClientID + ":" + Utility.SD.OACClientIDSecret);
+
+                // string token = System.Convert.ToBase64String(encdo);
+                //request.AddHeader("Authorization", $"Basic {token}");
+                string dtTime = DateTime.Now.ToString("yyyy-MM-ddThh:mm:sszzz");
+                request.AddHeader("X-TIMESTAMP", dtTime);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddHeader("X-CLIENT-KEY", Utility.SD.OACClientID);
+                request.AddHeader("X-SIGNITURE", GeneralLogic.GenerateSigniture(Utility.SD.ApiType.POST, Utility.SD.FunctionDBIType.SC_73, Utility.SD.OACClientID + "|" + dtTime));
+
+                request.AddParameter("grantType", "client_credentials");
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                switch (response.StatusCode)
+                {
+                    case HttpStatusCode.NotFound:
+                        return new() { IsSuccess = false, Message = "Not Found" };
+                    case HttpStatusCode.Forbidden:
+                        return new() { IsSuccess = false, Message = "Access Denied" };
+                    case HttpStatusCode.Unauthorized:
+                        return new() { IsSuccess = false, Message = "Unauthorized" };
+                    case HttpStatusCode.InternalServerError:
+                        return new() { IsSuccess = false, Message = "Internal Server Error" };
+                    default:
+                        AuthResponseDto apiContent = JsonConvert.DeserializeObject<AuthResponseDto>(response.Content);  //  JsonConvert.SerializeObject(response.Content);
+                        ResponseDto apiResponseDto = new ResponseDto();
+                        apiResponseDto.IsSuccess = true;
+                        apiResponseDto.Message = "";
+                        apiResponseDto.Result = apiContent;
+
+                        return apiResponseDto;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                var dto = new ResponseDto
+                {
+                    Message = ex.Message.ToString(),
+                    IsSuccess = false
+                };
+                return dto;
+            }
+
+
+        }
+
 
         public async Task<ResponseDto?> SendAsync(RequestDto requestDto, bool withBearer = true)
         {

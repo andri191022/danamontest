@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ctUnwY0u7IUnMvH5c3ZMonsIq5Mb841yLRFrfTT0HNljj8ub1eLcD0e2+N2eKGTZZN3ccR4Olq55onbE2HisOA==",
+  "dgSpecHash": "tE2n/Gpagm5Cd9cN0+Ys+hUxZeWkFLHTXRsRRPVEvDSalQHH8gebh/PU5AMinqjDHOJ04AJO2aNWIEI+EHZ59g==",
   "success": true,
   "projectFilePath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\andri\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.20.1\\microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",

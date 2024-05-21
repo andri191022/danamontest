@@ -8,6 +8,7 @@ namespace Testing.BillPay.Utility
         public static string RegisterVaAPIBase { get; set; }
         public static string AuthAPIBase { get; set; }
 
+        public static string AuthB2BAPIBase { get; set; }
         //BDI
 
         public static string OACClientID { get; set; }

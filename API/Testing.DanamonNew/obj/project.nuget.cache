@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MKWuzLcIfep+KxbNSKCvAxG8V779rUPxPNIexPLAcx1zLZ9VFMTIcnch7yfsvdV9Zov7T6QtB+95T/ne4CLLWg==",
+  "dgSpecHash": "po7VHHKj7qYHIGNKxzK9MBRRqCqqH0W+J6StjPfLUWXd1QHXTfInHs/5YN5FL1eSrKb2P+sFqIW1hhuLmr081w==",
   "success": true,
   "projectFilePath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\andri\\.nuget\\packages\\derconverter\\3.0.0.82\\derconverter.3.0.0.82.nupkg.sha512",
+    "C:\\Users\\andri\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",
@@ -120,7 +120,6 @@
     "C:\\Users\\andri\\.nuget\\packages\\nuget.projectmodel\\6.3.1\\nuget.projectmodel.6.3.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\nuget.protocol\\6.3.1\\nuget.protocol.6.3.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\nuget.versioning\\6.3.1\\nuget.versioning.6.3.1.nupkg.sha512",
-    "C:\\Users\\andri\\.nuget\\packages\\pemutils\\3.0.0.82\\pemutils.3.0.0.82.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
