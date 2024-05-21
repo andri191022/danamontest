@@ -118,6 +118,9 @@ namespace Testing.BillPay.Service
                     case HttpStatusCode.InternalServerError:
                         return new() { IsSuccess = false, Message = "Internal Server Error" };
                     default:
+                        string filePath = Path.Combine(Environment.CurrentDirectory, @"Data\", "log.txt");
+                        File.AppendAllText(filePath, response.Content + Environment.NewLine);
+
                         AuthResponseDto apiContent = JsonConvert.DeserializeObject<AuthResponseDto>(response.Content);  //  JsonConvert.SerializeObject(response.Content);
                         ResponseDto apiResponseDto = new ResponseDto();
                         apiResponseDto.IsSuccess = true;

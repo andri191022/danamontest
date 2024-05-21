@@ -85,7 +85,7 @@ namespace Testing.BillPay.Controllers
 
 
         [HttpPost]
-        public async Task<AuthResponseB2BDto> GetAuthB2B()
+        public async Task<ResponseDto?> GetAuthB2B()
         {
             //DanamonAuthDto obj = new DanamonAuthDto();
             AuthResponseB2BDto authResponseDto = new AuthResponseB2BDto();
@@ -101,12 +101,14 @@ namespace Testing.BillPay.Controllers
                 //  await SignInUser(authResponseDto);
                 // _tokenProvider.SetToken(authResponseDto.access_token);
 
-                return authResponseDto;
+                responseDto.Result= authResponseDto;
+
+                return responseDto;
             }
             else
             {
-
-                return authResponseDto;
+                
+                return responseDto;
             }
 
         }
