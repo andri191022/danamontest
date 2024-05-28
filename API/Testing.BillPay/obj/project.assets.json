@@ -788,11 +788,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
+      "projectUniqueName": "D:\\Andrik\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
       "projectName": "Testing.BillPay",
-      "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
+      "projectPath": "D:\\Andrik\\danamontest\\API\\Testing.BillPay\\Testing.BillPay.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.BillPay\\obj\\",
+      "outputPath": "D:\\Andrik\\danamontest\\API\\Testing.BillPay\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",

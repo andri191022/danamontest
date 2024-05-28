@@ -109,9 +109,12 @@ namespace Testing.BillPay.Service
                 request.AddHeader("X-TIMESTAMP", dtTime);
                 request.AddHeader("Content-Type", "application/json");
                 request.AddHeader("X-CLIENT-KEY", Utility.SD.OACClientID);
-                request.AddHeader("X-SIGNITURE", signiturex);
+                request.AddHeader("X-SIGNATURE", signiturex);
 
-                request.AddParameter("grantType", "client_credentials");
+                //request.AddParameter("grantType", "client_credentials");
+                var reqBody = new { grantType = "client_credentials" };
+                var jsonBody = JsonConvert.SerializeObject(reqBody);
+                request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
 
                 RestResponse response = await client.ExecuteAsync(request);
 
@@ -129,7 +132,7 @@ namespace Testing.BillPay.Service
                         string filePath = Path.Combine(Environment.CurrentDirectory, @"Data\", "log.txt");
                         File.AppendAllText(filePath, response.Content + Environment.NewLine);
 
-                        AuthResponseDto apiContent = JsonConvert.DeserializeObject<AuthResponseDto>(response.Content);  //  JsonConvert.SerializeObject(response.Content);
+                        AuthResponseB2BDto apiContent = JsonConvert.DeserializeObject<AuthResponseB2BDto>(response.Content);  //  JsonConvert.SerializeObject(response.Content);
                         ResponseDto apiResponseDto = new ResponseDto();
                         apiResponseDto.IsSuccess = true;
                         apiResponseDto.Message = "";

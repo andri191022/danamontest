@@ -27,6 +27,7 @@ SD.OACClientIDSecret = builder.Configuration["DanamonAuthData:OACClientIDSecret"
 SD.BDIKey = builder.Configuration["DanamonAuthData:BDIKey"];
 SD.BDIKeySecret = builder.Configuration["DanamonAuthData:BDIKeySecret"];
 SD.AuthAPIBase = builder.Configuration["ServiceUrls:AuthAPI"];
+SD.AuthB2BAPIBase = builder.Configuration["ServiceUrls:AuthB2BAPI"];
 //SD.RSAKey = builder.Configuration["RSABDI:RSAKeyAuth"];
 //bdi
 

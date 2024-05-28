@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj": {}
+    "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj": {}
   },
   "projects": {
-    "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj": {
+    "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+        "projectUniqueName": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
         "projectName": "WorkerService2",
-        "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+        "projectPath": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
         "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-        "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\obj\\",
+        "outputPath": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BouncyCastle.Cryptography": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.35, )"
@@ -62,7 +66,7 @@
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.19.5, )"
+              "version": "[1.20.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -70,7 +74,7 @@
             },
             "RestSharp": {
               "target": "Package",
-              "version": "[110.2.0, )"
+              "version": "[111.1.0, )"
             }
           },
           "imports": [

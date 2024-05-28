@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "po7VHHKj7qYHIGNKxzK9MBRRqCqqH0W+J6StjPfLUWXd1QHXTfInHs/5YN5FL1eSrKb2P+sFqIW1hhuLmr081w==",
+  "dgSpecHash": "9b7AOqu0+smnjfW7O5joBqp0/PaJyqKyZWHzw+UpdMxBUc+Kg4wms4jg3yIDDtgbfCTKNjercBDLx931Dqtiww==",
   "success": true,
-  "projectFilePath": "E:\\Tutorial\\DanamonTest\\danamontest\\API\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
+  "projectFilePath": "D:\\Andrik\\danamontest\\API\\Testing.DanamonNew\\Testing.DanamonNew.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andri\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\andri\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

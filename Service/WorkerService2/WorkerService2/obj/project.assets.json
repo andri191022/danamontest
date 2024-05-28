@@ -46,6 +46,19 @@
           }
         }
       },
+      "BouncyCastle.Cryptography/2.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Dapper/2.1.35": {
         "type": "package",
         "compile": {
@@ -967,7 +980,7 @@
           }
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {
         "type": "package",
         "build": {
           "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props": {},
@@ -987,18 +1000,15 @@
           }
         }
       },
-      "RestSharp/110.2.0": {
+      "RestSharp/111.1.0": {
         "type": "package",
-        "dependencies": {
-          "System.Text.Json": "7.0.2"
-        },
         "compile": {
-          "lib/net7.0/RestSharp.dll": {
+          "lib/net8.0/RestSharp.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net7.0/RestSharp.dll": {
+          "lib/net8.0/RestSharp.dll": {
             "related": ".xml"
           }
         }
@@ -1362,6 +1372,26 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "BouncyCastle.Cryptography/2.4.0": {
+      "sha512": "SwXsAV3sMvAU/Nn31pbjhWurYSjJ+/giI/0n6tCrYoupEK34iIHCuk3STAd9fx8yudM85KkLSVdn951vTng/vQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.4.0.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
       ]
     },
     "Dapper/2.1.35": {
@@ -2770,10 +2800,10 @@
         "microsoft.sqlserver.server.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.5": {
-      "sha512": "Kaa1rBZdJFq5A0qgAcl6Bmk/UqLXTq9acEqxUlPEBA8oscmakLfkvuSXfG7Wa9t1/keaT85EuuDNgOo+Z9VYOQ==",
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.20.1": {
+      "sha512": "H4bIRdEOuyWBotgdPA5oCjJmUekWrtU5lOKnMAVaSNduZXHnqFZECsYbkm4vIOE4aeIO8TEYqfsZaJus1KknLQ==",
       "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.5",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.20.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2802,7 +2832,7 @@
         "build/ToolsTarget.props",
         "build/ToolsTarget.targets",
         "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
+        "microsoft.visualstudio.azure.containers.tools.targets.1.20.1.nupkg.sha512",
         "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
         "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
         "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
@@ -2842,7 +2872,6 @@
         "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/tr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
         "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/utils/KillProcess.exe",
         "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
         "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
         "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
@@ -2881,22 +2910,27 @@
         "packageIcon.png"
       ]
     },
-    "RestSharp/110.2.0": {
-      "sha512": "FXGw0IMcqY7yO/hzS9QrD3iNswNgb9UxJnxWmfOxmGs4kRlZWqdtBoGPLuhlbgsDzX1RFo4WKui8TGGKXWKalw==",
+    "RestSharp/111.1.0": {
+      "sha512": "BWDcSLxNBDnILnWbvklMHtY3n93REYCu/1Ft13hh6xkluB1wfQvpPxvj9zaOlfwCZ+zMBDGuQmNAuo+mV8E9tQ==",
       "type": "package",
-      "path": "restsharp/110.2.0",
+      "path": "restsharp/111.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "README.md",
         "lib/net471/RestSharp.dll",
         "lib/net471/RestSharp.xml",
+        "lib/net48/RestSharp.dll",
+        "lib/net48/RestSharp.xml",
         "lib/net6.0/RestSharp.dll",
         "lib/net6.0/RestSharp.xml",
         "lib/net7.0/RestSharp.dll",
         "lib/net7.0/RestSharp.xml",
+        "lib/net8.0/RestSharp.dll",
+        "lib/net8.0/RestSharp.xml",
         "lib/netstandard2.0/RestSharp.dll",
         "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.110.2.0.nupkg.sha512",
+        "restsharp.111.1.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
       ]
@@ -3702,14 +3736,15 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BouncyCastle.Cryptography >= 2.4.0",
       "Dapper >= 2.1.35",
       "Microsoft.AspNetCore.Http.Abstractions >= 2.2.0",
       "Microsoft.Data.SqlClient >= 5.2.0",
       "Microsoft.Extensions.Hosting >= 8.0.0",
       "Microsoft.Extensions.Http >= 8.0.0",
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.5",
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.20.1",
       "Newtonsoft.Json >= 13.0.3",
-      "RestSharp >= 110.2.0"
+      "RestSharp >= 111.1.0"
     ]
   },
   "packageFolders": {
@@ -3718,11 +3753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+      "projectUniqueName": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
       "projectName": "WorkerService2",
-      "projectPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
+      "projectPath": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\WorkerService2.csproj",
       "packagesPath": "C:\\Users\\andri\\.nuget\\packages\\",
-      "outputPath": "E:\\Tutorial\\DanamonTest\\danamontest\\Service\\WorkerService2\\WorkerService2\\obj\\",
+      "outputPath": "D:\\Andrik\\danamontest\\Service\\WorkerService2\\WorkerService2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\andri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3751,6 +3786,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "BouncyCastle.Cryptography": {
+            "target": "Package",
+            "version": "[2.4.0, )"
+          },
           "Dapper": {
             "target": "Package",
             "version": "[2.1.35, )"
@@ -3773,7 +3812,7 @@
           },
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
             "target": "Package",
-            "version": "[1.19.5, )"
+            "version": "[1.20.1, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
@@ -3781,7 +3820,7 @@
           },
           "RestSharp": {
             "target": "Package",
-            "version": "[110.2.0, )"
+            "version": "[111.1.0, )"
           }
         },
         "imports": [
