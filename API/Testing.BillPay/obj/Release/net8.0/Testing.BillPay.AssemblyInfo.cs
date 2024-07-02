@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Testing.BillPay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10b6309bcc17a9d27f739df72389546ceef7a01c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Testing.BillPay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Testing.BillPay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

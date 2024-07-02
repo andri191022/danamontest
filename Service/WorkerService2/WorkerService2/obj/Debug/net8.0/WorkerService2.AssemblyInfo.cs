@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("dotnet-WorkerService2-95c079c6-9db4-477f-a9a5-cc2d64436adf")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("WorkerService2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

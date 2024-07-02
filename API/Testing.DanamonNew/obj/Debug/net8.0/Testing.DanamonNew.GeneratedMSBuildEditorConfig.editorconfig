@@ -17,51 +17,51 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Testing.DanamonNew
 build_property.RootNamespace = Testing.DanamonNew
-build_property.ProjectDir = D:\Andrik\danamontest\API\Testing.DanamonNew\
+build_property.ProjectDir = C:\Users\andri\Source\Repos\danamontest\API\Testing.DanamonNew\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Andrik\danamontest\API\Testing.DanamonNew
+build_property.MSBuildProjectDirectory = C:\Users\andri\Source\Repos\danamontest\API\Testing.DanamonNew
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Home/CreateVA.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Home/CreateVA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVWQS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Home/GetAuthorize.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Home/GetAuthorize.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHZXRBdXRob3JpemUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Home/Index.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Home/InquiryBalance.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Home/InquiryBalance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnF1aXJ5QmFsYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Home/Privacy.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Shared/Error.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/_ViewImports.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/_ViewStart.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Andrik/danamontest/API/Testing.DanamonNew/Views/Shared/_Layout.cshtml]
+[C:/Users/andri/Source/Repos/danamontest/API/Testing.DanamonNew/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-47is4tm71r
