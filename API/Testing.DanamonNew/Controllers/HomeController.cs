@@ -89,9 +89,9 @@ namespace Testing.DanamonNew.Controllers
             int i = random.Next();
 
             RegistrationVARequest obj = new RegistrationVARequest();
-            obj.UserReferenceNumber = (i.ToString() + i.ToString()).Substring(0, 16); //"1200123456784888";
-            obj.VirtualAccountNumber = "8888000000654321";
-            obj.VirtualAccountName = "MEDIO MAYO";
+            obj.UserReferenceNumber = (i.ToString() + i.ToString()).Substring(0, 16); //"";
+            obj.VirtualAccountNumber = "";
+            obj.VirtualAccountName = " ";
             obj.VirtualAccountExpiryDate = DateTime.Now.AddDays(+5).ToString("yyyyMMddHHmmss");
             obj.RequestTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
@@ -109,7 +109,7 @@ namespace Testing.DanamonNew.Controllers
 
                 objDto.registrationVARequest = obj;
 
-                objDto.BDISignature = "f4e4d374c813fd1689bdb1bf1f51653f";
+                objDto.BDISignature = "";
                 objDto.BDIKey = Utility.SD.BDIKey;
                 objDto.BDITimestamp = DateTime.Now.AddMinutes(-10).ToString("yyyy-MM-ddTHH:HH:mm:ssZ"); //DateTime.Now.AddHours(-1).ToUniversalTime().ToString("o");
 
@@ -140,7 +140,7 @@ namespace Testing.DanamonNew.Controllers
         {
             AccountInquiryBalanceRequest obj = new AccountInquiryBalanceRequest();
 
-            obj.UserReferenceNumber = "1200123456784321";
+            obj.UserReferenceNumber = "";
             obj.AccountNumber = "003542412345";
             obj.RequestTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
@@ -155,7 +155,7 @@ namespace Testing.DanamonNew.Controllers
                 AccountInquiryBalanceRequestDto objDto = new AccountInquiryBalanceRequestDto();
 
                 HeaderDto headerDto = new HeaderDto();
-                headerDto.BDI_Signature = "f4e4d374c813fd1689bdb1bf1f51653f";
+                headerDto.BDI_Signature = "";
                 headerDto.BDI_Key = Utility.SD.BDIKey;
                 headerDto.BDI_Timestamp = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ssZ"); //DateTime.Now.AddHours(-1).ToUniversalTime().ToString("o");
 
